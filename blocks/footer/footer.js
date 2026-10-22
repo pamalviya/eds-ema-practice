@@ -50,7 +50,12 @@ function buildBrand(section) {
   return brand;
 }
 
-/** one column per link group; the heading doubles as an accordion toggle on mobile */
+const setOpen = (column, open) => {
+  column.classList.toggle('is-open', open);
+  column.querySelector('.footer-group-toggle').setAttribute('aria-expanded', open ? 'true' : 'false');
+};
+
+/** one column per link group; the heading doubles as an accordion toggle on mobile (one open at a time) */
 function buildGroups(section) {
   const columns = [];
   const list = section.querySelector('ul');
@@ -70,8 +75,8 @@ function buildGroups(section) {
     toggle.addEventListener('click', () => {
       if (isDesktop.matches) return;
       const open = !column.classList.contains('is-open');
-      column.classList.toggle('is-open', open);
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      columns.forEach((other) => setOpen(other, false));
+      setOpen(column, open);
     });
     columns.push(column);
   });
@@ -94,10 +99,7 @@ export default async function decorate(block) {
 
   // headings are only toggles on mobile: reset the accordion when crossing the breakpoint
   isDesktop.addEventListener('change', () => {
-    top.querySelectorAll('.footer-group').forEach((column) => {
-      column.classList.remove('is-open');
-      column.querySelector('.footer-group-toggle').setAttribute('aria-expanded', 'false');
-    });
+    top.querySelectorAll('.footer-group').forEach((column) => setOpen(column, false));
   });
 
   block.append(top, legal);
