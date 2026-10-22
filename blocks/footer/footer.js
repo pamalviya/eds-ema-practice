@@ -50,12 +50,25 @@ function buildBrand(section) {
   return brand;
 }
 
+/** decorative accordion caret (flipped via CSS when the group is open) */
+const caret = () => {
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('class', 'footer-group-caret');
+  svg.setAttribute('viewBox', '0 0 24 24');
+  svg.setAttribute('aria-hidden', 'true');
+  svg.setAttribute('focusable', 'false');
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', 'M7.5 10h9L12 15z');
+  svg.append(path);
+  return svg;
+};
+
 const setOpen = (column, open) => {
   column.classList.toggle('is-open', open);
   column.querySelector('.footer-group-toggle').setAttribute('aria-expanded', open ? 'true' : 'false');
 };
 
-/** one column per link group; the heading doubles as an accordion toggle on mobile (one open at a time) */
+/** one column per link group; the heading is an accordion toggle on mobile (one open at a time) */
 function buildGroups(section) {
   const columns = [];
   const list = section.querySelector('ul');
@@ -67,7 +80,7 @@ function buildGroups(section) {
     const id = `footer-group-${i}`;
     links.id = id;
     links.className = 'footer-links';
-    const toggle = el('button', 'footer-group-toggle', heading ? heading.textContent.trim() : '');
+    const toggle = el('button', 'footer-group-toggle', heading ? heading.textContent.trim() : '', caret());
     toggle.type = 'button';
     toggle.setAttribute('aria-controls', id);
     toggle.setAttribute('aria-expanded', 'false');
