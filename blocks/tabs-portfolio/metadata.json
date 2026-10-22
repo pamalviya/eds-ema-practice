@@ -1,0 +1,22 @@
+{
+  "variantName": "tabs-portfolio",
+  "baseBlock": "tabs",
+  "canonicalModel": "collection",
+  "visualCharacteristics": {
+    "purpose": "Tabbed product/portfolio showcase where each tab holds an inner image-left/text-right slider",
+    "description": [
+      "Text tab bar with yellow active underline; cream rounded panels holding an inner image-left/text-right slider"
+    ]
+  },
+  "contentPattern": {
+    "structure": "cell 1: tab label; cell 2: one or more slides in order, each = image, then heading (h3), paragraph, CTA link. Each image starts a new slide; 2+ slides in a panel get prev/next arrows and dots",
+    "notes": [
+      "Tab bar switching between 7 content panels is an interactive component; each panel's slides stay inside the tab panel."
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Use for a tab bar switching between product categories, each with one or more featured slides.",
+  "reuseGuidance": "Reuse for any tabbed content where panels contain image + text slides. Plain text tabs work too (a panel with no image is rendered as a single slide).",
+  "sourceUrl": "https://www.myvi.in/business"
+}

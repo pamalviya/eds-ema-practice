@@ -1,0 +1,23 @@
+{
+  "variantName": "cards-article",
+  "baseBlock": "cards",
+  "canonicalModel": "collection",
+  "visualCharacteristics": {
+    "purpose": "Grid of article teaser cards (case studies, blog posts)",
+    "description": [
+      "3-up bordered article cards, image top, clamped title/description, optional date, arrow link"
+    ]
+  },
+  "contentPattern": {
+    "structure": "cell 1: image; cell 2: title paragraph linked to the article, description paragraph, optional date paragraph (e.g. \"October 21, 2026\"). The whole card is clickable via the title link and gets a decorative arrow",
+    "notes": [
+      "Three repeating image/title/description/link article cards.",
+      "Same repeating article-card structure as the case studies, plus a publish date."
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Use for a 3-up list of case studies or blog posts linking to full articles.",
+  "reuseGuidance": "Reuse wherever repeating image/title/description/link article teasers appear, with or without a date.",
+  "sourceUrl": "https://www.myvi.in/business"
+}

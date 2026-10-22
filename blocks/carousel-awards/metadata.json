@@ -1,0 +1,25 @@
+{
+  "variantName": "carousel-awards",
+  "baseBlock": "carousel",
+  "canonicalModel": "collection",
+  "visualCharacteristics": {
+    "purpose": "Horizontally scrolling row of award cards with prev/next arrows",
+    "description": [
+      "Multi-item slider of small white award cards (logo, title, description) with round arrows, on gradient section"
+    ]
+  },
+  "contentPattern": {
+    "structure": "cell 1: award logo image; cell 2: bold title paragraph followed by a description paragraph. Shows 1/2/3 cards at mobile/tablet/desktop",
+    "notes": [
+      "Award cards sit in a slider with prev/next arrows (interactive, repeating)."
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Use for awards, accolades or recognition cards shown in a slider.",
+  "reuseGuidance": "Reuse for any multi-item card slider of small logo + text cards; arrows hide when all cards fit.",
+  "sourceUrl": "https://www.myvi.in/business",
+  "sectionMetadata": {
+    "style": "awards-gradient"
+  }
+}

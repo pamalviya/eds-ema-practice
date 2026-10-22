@@ -1,20 +1,212 @@
-footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+/* Vi Business footer — values measured on www.myvi.in/business (mobile first, desktop from 900px) */
+
+.footer {
+  color: rgb(33 37 41);
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  line-height: 24px;
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
-}
-
-footer .footer p {
+.footer p {
   margin: 0;
 }
 
+.footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* top band: brand column + link groups */
+.footer .footer-top {
+  background-color: rgb(253 246 236);
+}
+
+.footer .footer-top-inner {
+  display: flex;
+  flex-direction: column;
+  padding: 32px var(--content-gutter) 24px;
+}
+
+.footer .footer-logo {
+  line-height: 0;
+}
+
+.footer .footer-logo img {
+  width: 86px;
+  height: 40px;
+  margin-bottom: 30px;
+}
+
+.footer .footer-name {
+  margin-bottom: 16px;
+}
+
+.footer .footer-description {
+  margin-bottom: 24px;
+  color: var(--text-color);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.footer .footer-social {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 4px 0 28px;
+}
+
+.footer .footer-social a {
+  display: block;
+  line-height: 0;
+}
+
+.footer .footer-social img {
+  width: auto;
+  height: 18px;
+}
+
+/* link groups (accordions on mobile) */
+.footer .footer-group {
+  border-top: 1px solid rgb(47 48 67 / 12%);
+}
+
+.footer .footer-group-heading {
+  margin: 0;
+  font-size: inherit;
+}
+
+.footer .footer-group-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  padding: 16px 0;
+  border: 0;
+  background: none;
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.footer .footer-group-toggle::after {
+  content: '';
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%232f3043' d='M7.5 10h9L12 15z'/%3E%3C/svg%3E") center / 24px no-repeat;
+  transition: transform 0.25s ease;
+}
+
+.footer .footer-group.is-open .footer-group-toggle::after {
+  transform: rotate(180deg);
+}
+
+.footer .footer-links {
+  display: none;
+  padding-bottom: 16px;
+}
+
+.footer .footer-group.is-open .footer-links {
+  display: block;
+}
+
+.footer .footer-links a {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 32px;
+}
+
+/* legal strip */
+.footer .footer-legal {
+  padding: 17px 0 16px;
+  background-color: rgb(250 237 217);
+}
+
+.footer .footer-legal-inner {
+  padding: 0 var(--content-gutter);
+  color: rgb(130 131 142);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 12px;
+}
+
+.footer .footer-legal-inner a {
+  color: rgb(51 51 51);
+  text-decoration: underline;
+}
+
+.footer .footer-links a:hover,
+.footer .footer-links a:focus-visible {
+  text-decoration: underline;
+}
+
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+  /* source row: 1062px wide, starting 520px left of centre (x=200 at 1440) */
+  .footer .footer-top-inner {
+    flex-direction: row;
+    box-sizing: content-box;
+    max-width: 1062px;
+    margin: 0 auto 0 max(var(--content-gutter), calc(50% - 520px));
+    padding: 38px 0 44px;
+  }
+
+  .footer .footer-brand {
+    flex: 0 0 210px;
+    margin-right: 56px;
+  }
+
+  .footer .footer-social {
+    padding: 8px 0 28px;
+  }
+
+  .footer .footer-group {
+    flex: 0 0 auto;
+    padding-right: 52px;
+    border-top: 0;
+  }
+
+  .footer .footer-group:last-child {
+    padding-right: 0;
+  }
+
+  /* a column is as wide as its heading + 10px or its longest link, as on the source */
+  .footer .footer-group-heading {
+    padding: 0 12px 2px 0;
+  }
+
+  .footer .footer-group-toggle {
+    display: block;
+    width: auto;
+    padding: 28px 0 16px;
+    cursor: default;
+  }
+
+  .footer .footer-group-toggle::after {
+    display: none;
+  }
+
+  .footer .footer-links,
+  .footer .footer-group.is-open .footer-links {
+    display: block;
+    margin-bottom: 50px;
+    padding-bottom: 0;
+  }
+
+  .footer .footer-legal-inner {
+    max-width: 1008px;
+    margin: 0 auto;
+    padding: 0 0 0 16px;
   }
 }

@@ -1,0 +1,124 @@
+/* accordion-faq: values from https://www.myvi.in/business #accordion-1 */
+
+.accordion-faq .accordion-faq-item {
+  border-bottom: 1px solid rgb(0 0 0 / 12.5%);
+}
+
+.accordion-faq .accordion-faq-item-label {
+  position: relative;
+  padding: 12px 32px 12px 0;
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.accordion-faq .accordion-faq-item-label::-webkit-details-marker {
+  display: none;
+}
+
+/* caret: source down/up arrow svg, 24px, right center */
+.accordion-faq .accordion-faq-item-label::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  background: url('caret.svg') center / 24px no-repeat;
+  transform: translateY(-50%);
+}
+
+.accordion-faq .accordion-faq-item[open] > .accordion-faq-item-label::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.accordion-faq .accordion-faq-item-body {
+  padding: 0 0 20px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.accordion-faq .accordion-faq-item-body p {
+  margin: 0 0 16px;
+}
+
+.accordion-faq .accordion-faq-item-body ul {
+  margin: 0 0 16px;
+  padding-left: 40px;
+  list-style-type: disc;
+}
+
+.accordion-faq .accordion-faq-item-body ul > li {
+  margin-bottom: 25px;
+  padding-left: 41px;
+  line-height: 24px;
+}
+
+.accordion-faq .accordion-faq-item-body li > p {
+  margin: 0;
+}
+
+/* nested lists render as lettered sub-lists on the source */
+.accordion-faq .accordion-faq-item-body li ul,
+.accordion-faq .accordion-faq-item-body li ol {
+  margin: 20px 0 16px;
+  padding: 0;
+  list-style-type: lower-alpha;
+}
+
+.accordion-faq .accordion-faq-item-body li ul > li,
+.accordion-faq .accordion-faq-item-body li ol > li {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+/* see more / see less outline pill */
+.accordion-faq .accordion-faq-more-button {
+  box-sizing: border-box;
+  width: 150px;
+  height: 40px;
+  margin: 24px 0 0;
+  padding: 0;
+  border: 1px solid var(--text-color);
+  border-radius: 25px;
+  background: transparent;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media (width >= 900px) {
+  .accordion-faq .accordion-faq-item-label {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .accordion-faq .accordion-faq-item-body {
+    padding: 20px;
+  }
+
+  .accordion-faq .accordion-faq-item-body ul > li {
+    padding-left: 0;
+  }
+
+  .accordion-faq .accordion-faq-more-button {
+    width: auto;
+    height: 50px;
+    padding: 15px 38px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+/* collapsed questions use hidden="until-found", which keeps their box: drop the divider meanwhile */
+.accordion-faq .accordion-faq-item[hidden] {
+  border: 0;
+}

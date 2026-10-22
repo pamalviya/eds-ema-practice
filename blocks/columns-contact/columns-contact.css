@@ -1,0 +1,87 @@
+/* columns-contact: icon + label + bold value contact columns (source: .dedicated-info) */
+
+/* section heading above the block (source .dedicated-heading-h2) */
+.columns-contact-container .default-content-wrapper h2 {
+  margin-bottom: 12px;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.columns-contact .columns-contact-row {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.columns-contact .columns-contact-item {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.columns-contact .columns-contact-item > p {
+  margin: 0;
+}
+
+.columns-contact .columns-contact-icon {
+  line-height: 0;
+}
+
+.columns-contact .columns-contact-icon img {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 12px;
+  object-fit: contain;
+}
+
+.columns-contact .columns-contact-item > .columns-contact-label {
+  margin-bottom: 10px;
+  color: var(--text-muted-color);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.columns-contact .columns-contact-value {
+  color: #5f004b;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  overflow-wrap: break-word;
+}
+
+.columns-contact .columns-contact-value strong {
+  font-weight: inherit;
+}
+
+.columns-contact .columns-contact-value a:any-link {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+@media (width >= 900px) {
+  .columns-contact-container .default-content-wrapper h2 {
+    margin-bottom: 32px;
+    font-size: 26px;
+    line-height: 29.9px;
+  }
+
+  .columns-contact .columns-contact-row {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .columns-contact .columns-contact-item {
+    flex: 1 1 0;
+  }
+
+  .columns-contact .columns-contact-item > .columns-contact-label {
+    font-size: 20px;
+  }
+
+  .columns-contact .columns-contact-value {
+    color: var(--text-color);
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "variantName": "accordion-faq",
+  "baseBlock": "accordion",
+  "canonicalModel": "collection",
+  "visualCharacteristics": {
+    "purpose": "Frequently asked questions list with expand/collapse answers",
+    "description": [
+      "Divider-separated numbered questions with caret, inside light-blue panel, show-more after 6"
+    ]
+  },
+  "contentPattern": {
+    "structure": "cell 1: question text (include numbering if desired, e.g. \"1. ...\"); cell 2: answer rich text. When there are more than 6 items, the rest are hidden behind a \"see more\" button",
+    "notes": [
+      "Expand/collapse question-and-answer list is an interactive component."
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Use for FAQ sections with question/answer pairs.",
+  "reuseGuidance": "Reuse for any question/answer or expand/collapse list; lists of 6 or fewer show no \"see more\" button.",
+  "sourceUrl": "https://www.myvi.in/business",
+  "sectionMetadata": {
+    "style": "light-blue"
+  }
+}

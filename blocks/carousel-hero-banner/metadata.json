@@ -1,0 +1,22 @@
+{
+  "variantName": "carousel-hero-banner",
+  "baseBlock": "carousel",
+  "canonicalModel": "collection",
+  "visualCharacteristics": {
+    "purpose": "Full-width rotating promo banner at the top of the page",
+    "description": [
+      "Full-width image-only promo banners with yellow pill CTA and dot pagination, autoplay"
+    ]
+  },
+  "contentPattern": {
+    "structure": "cell 1: banner image (message text is baked into the art, keep alt text); cell 2 (optional): CTA link or label. Dots and 5s autoplay (paused on hover/focus and for reduced motion) are added by the block",
+    "notes": [
+      "Rotating, auto-advancing banner slider with dot navigation is an interactive component; message text is baked into images, so each slide is image + CTA."
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Use for a page-top slider of image-only promo banners, each with an optional CTA.",
+  "reuseGuidance": "Reuse for any auto-advancing, image-led banner slider. For a single static banner use hero instead.",
+  "sourceUrl": "https://www.myvi.in/business"
+}

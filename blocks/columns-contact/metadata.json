@@ -1,0 +1,25 @@
+{
+  "variantName": "columns-contact",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "Side-by-side contact methods (icon, label, value)",
+    "description": [
+      "3 icon + label + bold value contact columns on beige band"
+    ]
+  },
+  "contentPattern": {
+    "structure": "one row with one cell per contact method; each cell: icon image, label paragraph, bold value paragraph. Bare phone numbers become tel: links and email addresses become mailto: links",
+    "notes": [
+      "Three contact items laid out side by side."
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Use for a support/contact band listing phone numbers and email addresses.",
+  "reuseGuidance": "Reuse for any row of icon + label + value items, e.g. contact channels or key facts.",
+  "sourceUrl": "https://www.myvi.in/business",
+  "sectionMetadata": {
+    "style": "beige"
+  }
+}

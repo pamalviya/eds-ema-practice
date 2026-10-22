@@ -1,0 +1,12 @@
+{
+  "type": "da",
+  "sites": {
+    "eds-ema-practice": {
+      "previewOrg": "pamalviya",
+      "previewSite": "eds-ema-practice",
+      "contentHostUrl": "https://content.da.live/pamalviya/eds-ema-practice/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json",
+      "botProtected": true
+    }
+  }
+}

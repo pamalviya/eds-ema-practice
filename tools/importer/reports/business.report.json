@@ -1,0 +1,18 @@
+{
+  "status": "success",
+  "url": "https://www.myvi.in/business",
+  "path": "business",
+  "timestamp": "2026-10-22T09:17:31.173Z",
+  "title": "Vi Business - B2B: Mobility, Connectivity, Security, IoT & Cloud",
+  "template": "business",
+  "blocks": [
+    "carousel-hero-banner",
+    "tabs-portfolio",
+    "carousel-awards",
+    "cards-article",
+    "cards-article",
+    "accordion-faq",
+    "carousel-logo-marquee",
+    "columns-contact"
+  ]
+}

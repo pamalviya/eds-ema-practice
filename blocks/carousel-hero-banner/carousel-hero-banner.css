@@ -1,0 +1,222 @@
+/* values from https://www.myvi.in/business div.banner-container computed styles */
+.carousel-hero-banner {
+  position: relative;
+  color: var(--text-color);
+}
+
+.carousel-hero-banner .carousel-hero-banner-slides-container {
+  position: relative;
+}
+
+.carousel-hero-banner .carousel-hero-banner-slides,
+.carousel-hero-banner .carousel-hero-banner-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-hero-banner .carousel-hero-banner-slides {
+  display: flex;
+  overflow: scroll clip;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.carousel-hero-banner .carousel-hero-banner-slides::-webkit-scrollbar {
+  display: none;
+}
+
+/* mobile: source slides are inset 30px from the viewport edge (20px section gutter + 10px) */
+.carousel-hero-banner .carousel-hero-banner-slide {
+  position: relative;
+  box-sizing: border-box;
+  flex: 0 0 100%;
+  width: 100%;
+  padding: 0 10px;
+  scroll-snap-align: start;
+}
+
+.carousel-hero-banner .carousel-hero-banner-slide-image {
+  line-height: 0;
+}
+
+.carousel-hero-banner .carousel-hero-banner-slide-image a {
+  display: block;
+}
+
+.carousel-hero-banner .carousel-hero-banner-slide-image picture {
+  display: block;
+}
+
+.carousel-hero-banner .carousel-hero-banner-slide-image img {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+/*
+ * mobile: only the landscape desktop art is authored, so the CTA sits below the
+ * image (an overlay would cover the baked-in headline). Offsets match the source
+ * mobile CTA (20px from the image's left edge, 15px from its bottom edge).
+ */
+.carousel-hero-banner .carousel-hero-banner-slide-content {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.carousel-hero-banner .carousel-hero-banner-slide-content p {
+  margin: 0;
+}
+
+.carousel-hero-banner .carousel-hero-banner-cta,
+main .carousel-hero-banner a.carousel-hero-banner-cta:any-link {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  height: 38px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 50px;
+  background-color: var(--brand-yellow);
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+main .carousel-hero-banner a.carousel-hero-banner-cta:hover {
+  text-decoration: none;
+}
+
+main .carousel-hero-banner a.carousel-hero-banner-cta:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 2px;
+}
+
+/* dots: inactive 6px circle, active 20px pill, drawn inside 24x24 tap targets (WCAG 2.5.8) */
+.carousel-hero-banner .carousel-hero-banner-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 2px;
+  line-height: 0;
+}
+
+.carousel-hero-banner .carousel-hero-banner-indicator button {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.carousel-hero-banner .carousel-hero-banner-indicator button::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgb(80 0 80 / 25%);
+}
+
+.carousel-hero-banner .carousel-hero-banner-indicator button[aria-current='true']::before {
+  width: 20px;
+  border-radius: 10px;
+  background-color: rgb(95 0 75);
+}
+
+.carousel-hero-banner .carousel-hero-banner-indicator button:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 2px;
+}
+
+@media (width >= 900px) {
+  .carousel-hero-banner .carousel-hero-banner-slide {
+    padding: 0;
+  }
+
+  .carousel-hero-banner .carousel-hero-banner-slide-image img {
+    aspect-ratio: 1024 / 338;
+    object-fit: cover;
+  }
+
+  /* desktop: CTA overlays the art, 60px from the left and 40px from the bottom */
+  .carousel-hero-banner .carousel-hero-banner-slide-content {
+    position: absolute;
+    left: 60px;
+    bottom: 40px;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+  }
+
+  .carousel-hero-banner .carousel-hero-banner-cta,
+  main .carousel-hero-banner a.carousel-hero-banner-cta:any-link {
+    min-width: 150px;
+    height: 50px;
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-hero-banner .carousel-hero-banner-slides {
+    scroll-behavior: auto;
+  }
+}
+
+/* pause/play control: right end of the dot row, 24x24 target */
+.carousel-hero-banner nav {
+  position: relative;
+}
+
+.carousel-hero-banner .carousel-hero-banner-toggle {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: rgb(95 0 75);
+  cursor: pointer;
+}
+
+/* pause icon: two bars */
+.carousel-hero-banner .carousel-hero-banner-toggle::before {
+  content: '';
+  box-sizing: border-box;
+  width: 9px;
+  height: 10px;
+  border-inline: 3px solid currentcolor;
+}
+
+/* play icon: triangle */
+.carousel-hero-banner .carousel-hero-banner-toggle[data-paused='true']::before {
+  border: 0;
+  background-color: currentcolor;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.carousel-hero-banner .carousel-hero-banner-toggle:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 2px;
+}

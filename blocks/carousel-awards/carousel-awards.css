@@ -1,0 +1,267 @@
+/* block */
+.carousel-awards {
+  position: relative;
+  color: var(--text-color);
+}
+
+.carousel-awards .carousel-awards-viewport {
+  margin: 0 calc(-1 * var(--content-gutter));
+}
+
+.carousel-awards .carousel-awards-track {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0;
+  padding: 0 25px;
+  list-style: none;
+  overflow: auto clip;
+  scroll-behavior: smooth;
+  scroll-padding-inline: 25px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.carousel-awards .carousel-awards-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-awards .carousel-awards-card {
+  box-sizing: border-box;
+  flex: 0 0 100%;
+  padding: 11px;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(#e0b5cd, #a6cdff);
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+  scroll-snap-align: center;
+}
+
+.carousel-awards .carousel-awards-card-image {
+  margin: 0 0 20px;
+  line-height: 0;
+}
+
+.carousel-awards .carousel-awards-card-image p {
+  margin: 0;
+}
+
+.carousel-awards .carousel-awards-card-image img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+}
+
+.carousel-awards .carousel-awards-card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px 20px;
+}
+
+.carousel-awards .carousel-awards-card-body p {
+  margin: 0;
+  color: var(--text-muted-color);
+  font-size: 14px;
+  line-height: 16.8px;
+}
+
+.carousel-awards .carousel-awards-card-body .carousel-awards-card-title {
+  max-width: 225px;
+  margin: 0 0 8px;
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+}
+
+.carousel-awards .carousel-awards-card-title strong {
+  font-weight: inherit;
+}
+
+/* arrows (desktop only) */
+.carousel-awards .carousel-awards-prev,
+.carousel-awards .carousel-awards-next {
+  display: none;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 100%;
+  background: transparent center / 100% 100% no-repeat;
+  opacity: 0.6;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.carousel-awards .carousel-awards-prev {
+  left: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'%3E%3Ccircle cx='16' cy='16' r='15.583' fill='%23fff' stroke='%239F6693' stroke-width='.833'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M17.346 19.49a.833.833 0 0 0 1.322-.676v-5.74a.833.833 0 0 0-1.322-.674l-3.967 2.87a.833.833 0 0 0 0 1.35l3.967 2.87z' fill='%235F004B'/%3E%3C/svg%3E");
+}
+
+.carousel-awards .carousel-awards-next {
+  right: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'%3E%3Ccircle cx='16' cy='16' r='15.583' fill='%23fff' stroke='%239F6693' stroke-width='.833'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.654 19.49a.833.833 0 0 1-1.322-.676v-5.74c0-.68.77-1.073 1.322-.674l3.967 2.87a.833.833 0 0 1 0 1.35l-3.967 2.87z' fill='%235F004B'/%3E%3C/svg%3E");
+}
+
+.carousel-awards .carousel-awards-prev:hover,
+.carousel-awards .carousel-awards-next:hover,
+.carousel-awards .carousel-awards-prev:focus-visible,
+.carousel-awards .carousel-awards-next:focus-visible {
+  opacity: 0.8;
+}
+
+/* dots (small screens only) */
+.carousel-awards .carousel-awards-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.carousel-awards .carousel-awards-dots li {
+  display: flex;
+}
+
+/* 24x24 tap target (WCAG 2.5.8) with the visible dot drawn inside */
+.carousel-awards .carousel-awards-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.carousel-awards .carousel-awards-dot::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgb(80 0 80 / 25%);
+}
+
+.carousel-awards .carousel-awards-dot.active::before {
+  width: 20px;
+  border-radius: 10px;
+  background-color: #5f004b;
+}
+
+.carousel-awards.carousel-awards-static .carousel-awards-prev,
+.carousel-awards.carousel-awards-static .carousel-awards-next,
+.carousel-awards.carousel-awards-static .carousel-awards-dots {
+  visibility: hidden;
+}
+
+@media (width >= 600px) {
+  .carousel-awards .carousel-awards-viewport {
+    margin: 0;
+  }
+
+  .carousel-awards .carousel-awards-track {
+    padding: 0;
+    scroll-padding-inline: 0;
+  }
+
+  .carousel-awards .carousel-awards-card {
+    flex-basis: calc((100% - 20px) / 3);
+    scroll-snap-align: start;
+  }
+
+  .carousel-awards .carousel-awards-dots {
+    display: none;
+  }
+}
+
+@media (width >= 900px) {
+  .carousel-awards .carousel-awards-viewport {
+    margin: 0 79px;
+  }
+
+  .carousel-awards .carousel-awards-card-image img {
+    height: 112px;
+  }
+
+  .carousel-awards .carousel-awards-card-body .carousel-awards-card-title {
+    max-width: 220px;
+  }
+
+  .carousel-awards .carousel-awards-prev,
+  .carousel-awards .carousel-awards-next {
+    display: block;
+  }
+}
+
+/* section header (default content: trophy icon, h2, intro) */
+main .section.carousel-awards-container > .default-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+main .section.carousel-awards-container > .default-content-wrapper > p:first-child {
+  margin: 0;
+  line-height: 0;
+}
+
+main .section.carousel-awards-container > .default-content-wrapper > p:first-child img {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+main .section.carousel-awards-container > .default-content-wrapper > h2 {
+  margin: 0;
+  font-size: var(--heading-font-size-xl);
+  line-height: 24px;
+}
+
+main .section.carousel-awards-container > .default-content-wrapper > h2 ~ p:last-child {
+  flex: 0 0 100%;
+  margin: 0;
+  color: var(--text-muted-color);
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+}
+
+@media (width >= 900px) {
+  main .section.carousel-awards-container > .default-content-wrapper {
+    justify-content: flex-start;
+    padding-bottom: 30px;
+    padding-left: 101px;
+  }
+
+  main .section.carousel-awards-container > .default-content-wrapper > p:first-child img {
+    width: 68px;
+    height: 68px;
+  }
+
+  main .section.carousel-awards-container > .default-content-wrapper > h2 {
+    line-height: 32px;
+  }
+
+  main .section.carousel-awards-container > .default-content-wrapper > h2 ~ p:last-child {
+    box-sizing: border-box;
+    max-width: 698px;
+    padding-left: 20px;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: start;
+  }
+}
